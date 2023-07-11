@@ -3,23 +3,19 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-<!-- Font Awesome -->
-<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<title>Aerolínea TECHNOKEY </title>
+		<!-- Font Awesome -->
+		<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<!-- Bootstrap -->
-		<link
-			href="/vendors/bootstrap/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>	
+		<link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>	
 		<!-- Materialize -->
 		<link href="/src/libs/materialize/css/materialize.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="/src/css/general.css">
 	</head>
 
 	<body>
-
-		<!-- Popup Add location-->
-		<div id="popup-add-admin" class="popup ">
+		<!-- Popup para añadir un vuelo -->
+		<div id="popup-add-vuelo" class="popup">
 			<div class="cortina-popup "></div>
 			<div class="popup-content">
 				<div class="btn-cerrar-popup-container">
@@ -34,38 +30,147 @@
 				<div class="content-form">
 					<form id="form-add-product">
 						<div id="title-popup">
-							<h4>Crear Servicios</h4>
+							<h4>Crear Vuelo</h4>
 						</div>						
 						<div>
 							<div class="input-field col s12">
-								<input id="name" type="text">
-								<label for="name">Nombre</label>
+								<div class="row">
+									<div class="input-field col s12">
+										<select  id="nombres-list">
+											<option value="seleccionar">-- Seleccionar --</option>
+										</select>
+										<label class="on-focus" for="nombres-list">Nombre pasajero</label>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div>
 							<div class="input-field col s12">
-								<textarea id="description" class="materialize-textarea" placeholder=" "></textarea>
-								<label for="description">Descripción</label>
+								<div class="row">
+									<div class="input-field col s12">
+										<select  id="aero-llegada-list">
+											<option value="seleccionar">-- Seleccionar --</option>
+										</select>
+										<label class="on-focus" for="aero-llegada-list">Aeropuerto llegada</label>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="content-switch-pp">
-							<div class="switch">
-								<label>
-									Estado del servicio
-									<input id="state" type="checkbox" checked="">
-									<span class="lever"></span>
-								</label>
+						<div>
+							<div class="input-field col s12">
+								<div class="row">
+									<div class="input-field col s12">
+										<select  id="aero-salida-list">
+											<option value="seleccionar">-- Seleccionar --</option>
+										</select>
+										<label class="on-focus" for="aero-salida-list">Aeropuerto salida</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="fecha-vuelo" type="text" >
+								<label for="fecha-vuelo">Fecha de vuelo</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="hora-llegada" class="hora" type="text" >
+								<label for="hora-llegada">Hora llegada</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="hora-salida" class="hora"  type="text" >
+								<label for="hora-salida">Hora salida</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="duracion" class="hora"  type="text"  >
+								<label for="duracion">Duración</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="valor" type="text"  >
+								<label for="valor">Valor</label>
 							</div>
 						</div>
 						<div class="btn-popup">
-							<a href="#" class="btn btn-info btn-xs" id="btn-create-service"> Enviar <i class="fa fa-floppy-o"></i></a>
+							<a href="#" class="btn btn-info btn-xs" id="btn-create-vuelo"> Crear <i class="fa fa-floppy-o"></i></a>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
+		<!-- Fin de popup para añadir un vuelo -->
 		
-		<!-- start project list -->
+		<!-- Popup para editar un vuelo -->
+		<div id="popup-edit-vuelo" class="popup ">
+			<div class="cortina-popup "></div>
+			<div class="popup-content">
+				<div class="btn-cerrar-popup-container">
+					<div class="btn-cerrar-popup">
+						<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+							<path fill="#363636"
+								d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z">
+							</path>
+						</svg>
+					</div>
+				</div>
+				<div class="content-form">
+					<form id="form-edit-vuelo">
+						<div id="title-popup">
+							<h4>Editar Vuelo</h4>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="edit-name" type="text" placeholder=" " disabled>
+								<label for="edit-name">Nombre</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="edit-fecha-vuelo" type="text" placeholder=" " >
+								<label for="edit-fecha-vuelo">Fecha de vuelo</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="edit-hora-llegada" type="text"  placeholder=" ">
+								<label for="edit-hora-llegada">Hora llegada</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="edit-hora-salida" type="text"  placeholder=" ">
+								<label for="edit-hora-salida">Hora salida</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="edit-duracion" type="text" placeholder=" "  placeholder=" ">
+								<label for="edit-duracion">Duración</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<input id="edit-valor" type="text" placeholder=" "  placeholder=" ">
+								<label for="edit-valor">Valor</label>
+							</div>
+						</div>
+						<div class="btn-popup">
+							<a href="#" class="btn btn-info btn-xs" id="btn-edit-vuelo"> Editar <i class="fa fa-pencil"></i></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- Fin de popup para editar un vuelo -->
+		
+		<!-- Tabla donde se alojaran los vuelos -->
 		<table class="datatable table table-striped projects">
 			<thead id="head-table-cat">
 				<th style="font-family: 'averta bold'; font-size: 18px">ID</th>
@@ -89,20 +194,34 @@
 			</thead>
 			<tbody id="table-vuelos"></tbody>
 		</table>
-		<!-- end project list -->
+		
+		<!-- Fin de tabla donde se alojaran los vuelos -->
+
+		<!-- Boton para añadir un vuelo nuevo -->
+		<div class="btn-add tooltipped" data-position="top" >
+			<a href="#" id="btn-add-vuelo">
+				<svg style="width:30px;height:30px" viewBox="0 0 24 24">
+					<path fill="#ffffff" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+				</svg>
+			</a>
+		</div>
+		<!-- Fin de boton para añadir un vuelo nuevo -->
 
 		<!-- jQuery -->
 		<script src="/vendors/jquery/dist/jquery.min.js"></script>
 		<!-- Bootstrap -->
 		<script src="/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-		<!-- FastClick -->
-		<script src="/vendors/fastclick/lib/fastclick.js"></script>
-		<!-- NProgress -->
-		<script src="/vendors/nprogress/nprogress.js"></script>
 		<!-- Datatables -->
 		<script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 		<!-- sweetalert2 Scripts -->
 		<script src="/src/libs/sweetalert2/sweetalert2.all.min.js"></script>
+		<!-- materialize -->
+		<script src="/src/libs/materialize/js/materialize.min.js"></script>
+		<!-- notify Scripts -->
+		<script src="/src/libs/notify/notify.min.js"></script>		
+		<!-- General functions Scripts -->
+		<script src="/src/js/general-functions.js"></script>
+		<!-- Vuelos Scripts -->
 		<script src="/src/js/vuelos.js"></script>
 	</body>
 </html>

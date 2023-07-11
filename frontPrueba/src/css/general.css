@@ -1,12 +1,15 @@
 /* popup */
 
+.popup.active {
+	display: flex;
+}
 .popup {
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.2);
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
+	display: none;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-ms-flex-direction: row;
@@ -62,80 +65,6 @@
 	z-index: 2;
 }
 
-#popup-edit-image .popup-content {
-	width: 900px;
-	height: 450px;
-}
-
-#content-img-to-edit {
-	width: 100%;
-	height: 600px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-
-#title-edit-image-p {
-	color: #606060;
-	font-family: "sf-ui Bold";
-	font-size: 30px;
-}
-#c-img-t-e {
-	width: 90%;
-}
-
-#btn-edit-image {
-	padding: 4px 15px;
-	border-radius: 4px;
-	color: #ffffff;
-	font-family: "sf-ui Bold";
-	font-size: 18px;
-	background-color: #606060;
-	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-		0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
-		0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-	-webkit-transition: all ease 0.2s;
-	-o-transition: all ease 0.2s;
-	transition: all ease 0.2s;
-}
-
-#btn-edit-image:hover {
-	-webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-		0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
-		0 2px 4px -1px rgba(0, 0, 0, 0.3);
-}
-
-.content-p {
-	width: 100%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	position: absolute;
-	top: 0px;
-}
-
 .content-form {
 	width: 100%;
 	padding: 0px 0px 20px;
@@ -171,23 +100,6 @@
 	color: #606060;
 }
 
-#contentt-img {
-	width: 100%;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-
 .btn-cerrar-popup-container {
 	width: 100%;
 	padding: 10px;
@@ -207,8 +119,8 @@
 	-ms-flex-align: center;
 	align-items: center;
 }
-.btn-cerrar-popup,
-.btn-cerrar-popup-image {
+
+.btn-cerrar-popup {
 	width: 38px;
 	height: 38px;
 	color: #767676;
@@ -226,8 +138,7 @@
 	-o-transition: all ease 0.2s;
 	transition: all ease 0.2s;
 }
-.btn-cerrar-popup:hover,
-.btn-cerrar-popup-image:hover {
+.btn-cerrar-popup:hover {
 	-webkit-transform: rotateZ(180deg);
 	-ms-transform: rotate(180deg);
 	transform: rotateZ(180deg);
@@ -239,4 +150,48 @@
 	margin: 0px 0px 30px;
 	font-family: "sf-ui Bold";
 	color: #606060;
+}
+
+.btn-add {
+	width: 50px;
+	height: 50px;
+	-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+		0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+		0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+	background-color: #606060;
+	border-radius: 50%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: absolute;
+	bottom: 20px;
+	right: 30px;
+}
+.btn-add > a {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: #ffffff;
 }
