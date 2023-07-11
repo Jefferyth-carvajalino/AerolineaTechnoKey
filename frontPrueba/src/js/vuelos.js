@@ -11,8 +11,7 @@ $.ajax({
 
 	if (sRes['res'] == "ok") {
 		let data = sRes["msg"];
-		console.log(data);
-		// localStorage.setItem('specialties', JSON.stringify(data));
+		localStorage.setItem('vuelos', JSON.stringify(data));
 		data.forEach(vuelo => {
 
 			$('#table-vuelos').append(

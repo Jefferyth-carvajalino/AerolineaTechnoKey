@@ -4,30 +4,67 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+<!-- Font Awesome -->
+<link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<!-- Bootstrap -->
 		<link
 			href="/vendors/bootstrap/dist/css/bootstrap.min.css"
 			rel="stylesheet"
-		/>
-		<!-- Font Awesome -->
-		<link
-			href="/vendors/font-awesome/css/font-awesome.min.css"
-			rel="stylesheet"
-		/>
-		<!-- NProgress -->
-		<link href="/vendors/nprogress/nprogress.css" rel="stylesheet" />
-		<!-- iCheck -->
-		<link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet" />
+		/>	
 		<!-- Materialize -->
-		<link
-			href="/src/libs/materialize/css/materialize.min.css"
-			rel="stylesheet"
-		/>
-		<!-- materialize -->
-		<script src="/src/libs/materialize/js/materialize.min.js"></script>
+		<link href="/src/libs/materialize/css/materialize.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="/src/css/general.css">
 	</head>
 
 	<body>
+
+		<!-- Popup Add location-->
+		<div id="popup-add-admin" class="popup ">
+			<div class="cortina-popup "></div>
+			<div class="popup-content">
+				<div class="btn-cerrar-popup-container">
+					<div class="btn-cerrar-popup">
+						<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+							<path fill="#363636"
+								d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z">
+							</path>
+						</svg>
+					</div>
+				</div>
+				<div class="content-form">
+					<form id="form-add-product">
+						<div id="title-popup">
+							<h4>Crear Servicios</h4>
+						</div>						
+						<div>
+							<div class="input-field col s12">
+								<input id="name" type="text">
+								<label for="name">Nombre</label>
+							</div>
+						</div>
+						<div>
+							<div class="input-field col s12">
+								<textarea id="description" class="materialize-textarea" placeholder=" "></textarea>
+								<label for="description">Descripción</label>
+							</div>
+						</div>
+						<div class="content-switch-pp">
+							<div class="switch">
+								<label>
+									Estado del servicio
+									<input id="state" type="checkbox" checked="">
+									<span class="lever"></span>
+								</label>
+							</div>
+						</div>
+						<div class="btn-popup">
+							<a href="#" class="btn btn-info btn-xs" id="btn-create-service"> Enviar <i class="fa fa-floppy-o"></i></a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
 		<!-- start project list -->
 		<table class="datatable table table-striped projects">
 			<thead id="head-table-cat">
@@ -62,10 +99,10 @@
 		<script src="/vendors/fastclick/lib/fastclick.js"></script>
 		<!-- NProgress -->
 		<script src="/vendors/nprogress/nprogress.js"></script>
-		<!-- bootstrap-progressbar -->
-		<script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 		<!-- Datatables -->
 		<script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+		<!-- sweetalert2 Scripts -->
+		<script src="/src/libs/sweetalert2/sweetalert2.all.min.js"></script>
 		<script src="/src/js/vuelos.js"></script>
 	</body>
 </html>
